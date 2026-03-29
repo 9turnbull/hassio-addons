@@ -1,3 +1,30 @@
+
+## 1.3.28 (2026-03-28)
+- Update to latest version from ente-io/ente (changelog : https://github.com/ente-io/ente/releases)
+
+## 1.7.21 (2026-03-07)
+- Update to latest version from ente-io/ente (changelog : https://github.com/ente-io/ente/releases)
+
+## 1.3.16 (2026-02-28)
+- Update to latest version from ente-io/ente (changelog : https://github.com/ente-io/ente/releases)
+
+## 1.3.15 (2026-02-23)
+- Update to latest version from ente-io/ente (changelog : https://github.com/ente-io/ente/releases)
+
+## 4.4.17 (2026-02-21)
+- Update to latest version from ente-io/ente (changelog : https://github.com/ente-io/ente/releases)
+
+## 4.4.16 (2026-02-14)
+- Update to latest version from ente-io/ente (changelog : https://github.com/ente-io/ente/releases)
+
+## 4.4.17 (2026-02-07)
+- Update to latest version from ente-io/ente (changelog : https://github.com/ente-io/ente/releases)
+
+## 1.7.18 (2026-02-04)
+- Update to latest version from ente-io/ente (changelog : https://github.com/ente-io/ente/releases)
+
+## 1.7.17 (2026-01-30)
+- Update to latest version from ente-io/ente (changelog : https://github.com/ente-io/ente/releases)
 ## 4.4.15 (2026-01-03)
 - Minor bugs fixed
 

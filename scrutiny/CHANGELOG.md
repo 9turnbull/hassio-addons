@@ -1,4 +1,29 @@
+
+## v1.47.1 (2026-03-21)
+- Update to latest version from Starosdev/scrutiny (changelog : https://github.com/Starosdev/scrutiny/releases)
+
+## v1.46.2 (2026-03-14)
+- Update to latest version from Starosdev/scrutiny (changelog : https://github.com/Starosdev/scrutiny/releases)
+
+## v1.41.0 (2026-03-07)
+- Update to latest version from Starosdev/scrutiny (changelog : https://github.com/Starosdev/scrutiny/releases)
+
+## v1.37.0 (2026-02-28)
+- Update to latest version from Starosdev/scrutiny (changelog : https://github.com/Starosdev/scrutiny/releases)
+
+## v1.30.1 (2026-02-23)
+- Update to latest version from Starosdev/scrutiny (changelog : https://github.com/Starosdev/scrutiny/releases)
+
+## v1.28.0 (2026-02-21)
+- Update to latest version from Starosdev/scrutiny (changelog : https://github.com/Starosdev/scrutiny/releases)
+
+## v1.23.3 (2026-02-14)
+- Update to latest version from Starosdev/scrutiny (changelog : https://github.com/Starosdev/scrutiny/releases)
+## v1.23.2-2 (08-02-2026)
 - Added support for configuring extra environment variables via the `env_vars` add-on option alongside config.yaml. See https://github.com/alexbelgium/hassio-addons/wiki/Add-Environment-variables-to-your-Addon-2 for details.
+
+## v1.23.2 (2026-02-08)
+- Switch upstream to https://github.com/Starosdev/scrutiny
 
 ## v0.8.1-12 (2025-08-16)
 - Replace s6-based shutdown with standard command to avoid s6-svwait error

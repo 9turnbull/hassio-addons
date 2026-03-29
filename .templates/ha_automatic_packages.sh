@@ -41,7 +41,7 @@ fi
 # ADD GENERAL ELEMENTS
 ######################
 
-PACKAGES="$PACKAGES jq curl ca-certificates micro"
+PACKAGES="$PACKAGES jq curl sed ca-certificates micro"
 
 # FOR EACH SCRIPT, SELECT PACKAGES
 ##################################
@@ -125,14 +125,6 @@ for files in "/etc/cont-init.d" "/etc/services.d"; do
         [ "$PACKMANAGER" = "pacman" ] && PACKAGES="$PACKAGES coreutils openvpn"
     fi
 
-    COMMAND="jq"
-    if grep -q -rnw "$files/" -e "$COMMAND" && ! command -v $COMMAND &> /dev/null; then
-        [ "$VERBOSE" = true ] && echo "$COMMAND required"
-        [ "$PACKMANAGER" = "apk" ] && PACKAGES="$PACKAGES jq"
-        [ "$PACKMANAGER" = "apt" ] && PACKAGES="$PACKAGES jq"
-        [ "$PACKMANAGER" = "pacman" ] && PACKAGES="$PACKAGES jq"
-    fi
-
     COMMAND="yamllint"
     if grep -q -rnw "$files/" -e "$COMMAND" && ! command -v $COMMAND &> /dev/null; then
         [ "$VERBOSE" = true ] && echo "$COMMAND required"
@@ -191,6 +183,13 @@ done
 [ "$VERBOSE" = true ] && echo "installing packages $PACKAGES"
 if [ "$PACKMANAGER" = "apt" ]; then apt-get update > /dev/null; fi
 if [ "$PACKMANAGER" = "pacman" ]; then pacman -Sy > /dev/null; fi
+if [ "$PACKMANAGER" = "apk" ] && [ -f /etc/apk/repositories ] && ! grep -q "community" /etc/apk/repositories; then
+    ALPINE_VER=$(cat /etc/alpine-release 2>/dev/null | cut -d. -f1,2)
+    if [ -n "$ALPINE_VER" ]; then
+        echo "https://dl-cdn.alpinelinux.org/alpine/v${ALPINE_VER}/community" >> /etc/apk/repositories
+        apk update > /dev/null
+    fi
+fi
 
 # Install apps one by one to allow failures
 # shellcheck disable=SC2086

@@ -61,6 +61,9 @@ Webui can be found at `<your-ip>:32400`.
 | `cifsdomain` | str | | SMB domain for network shares |
 | `smbv1` | bool | `false` | Enable SMB v1 protocol |
 | `skip_permissions_check` | bool | `false` | Skip file permissions checking |
+| `data_location` | str | `/share/plex` | Path where Plex data is stored |
+
+When `data_location` is changed and the target folder is empty, the add-on copies data from the previous Plex location (detected via the `/config/Library` symlink, or `/share/plex` on first migration).
 
 ### Example Configuration
 
@@ -74,6 +77,7 @@ networkdisks: "//192.168.1.100/media,//nas.local/movies"
 cifsusername: "mediauser"
 cifspassword: "password123"
 cifsdomain: "workgroup"
+data_location: "/share/plex"
 ```
 
 ### Mounting Drives
@@ -88,7 +92,8 @@ This addon supports mounting both local drives and remote SMB shares:
 The installation of this add-on is pretty straightforward and not different in
 comparison to installing any other Hass.io add-on.
 
-1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
+1. Add my add-ons repository to your home assistant instance (in supervisor addons store at top right, or click button below if you have configured my HA)
+   [![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Falexbelgium%2Fhassio-addons)
 1. Install this add-on.
 1. Click the `Save` button to store your configuration.
 1. Start the add-on.
@@ -96,5 +101,3 @@ comparison to installing any other Hass.io add-on.
 1. Carefully configure the add-on to your preferences, see the official documentation for for that.
 
 [repository]: https://github.com/alexbelgium/hassio-addons
-
-

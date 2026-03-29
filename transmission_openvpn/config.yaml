@@ -91,7 +91,6 @@ options:
   TRANSMISSION_DOWNLOAD_DIR: /share/downloads
   TRANSMISSION_HOME: /config/addons_config/transmission
   TRANSMISSION_INCOMPLETE_DIR: /share/incomplete
-  TRANSMISSION_V3_UPDATE: "true"
   TRANSMISSION_WATCH_DIR: /share/watch_dir
   TRANSMISSION_WEB_UI: flood-for-transmission
   WEBPROXY_ENABLED: "true"
@@ -128,7 +127,7 @@ schema:
   TRANSMISSION_HOME: str
   TRANSMISSION_INCOMPLETE_DIR: str
   TRANSMISSION_WATCH_DIR: str
-  TRANSMISSION_WEB_UI: list(standard|combustion|kettu|transmission-web-control|flood-for-transmission|shift)
+  TRANSMISSION_WEB_UI: list(standard|combustion|flood-for-transmission|kettu|shift|transmissionic|transmission-web-control)
   WEBPROXY_ENABLED: bool
   auto_restart: bool?
   cifsdomain: str?
@@ -139,4 +138,4 @@ schema:
 slug: transmission_openvpn
 udev: true
 url: https://github.com/alexbelgium/hassio-addons
-version: v5.3.2
+version: "v5.4.1"

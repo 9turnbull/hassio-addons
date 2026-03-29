@@ -38,7 +38,8 @@ This addon is based on the [docker image](https://github.com/jokob-sk/NetAlertX/
 The installation of this add-on is pretty straightforward and not different in
 comparison to installing any other Hass.io add-on.
 
-1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
+1. Add my add-ons repository to your home assistant instance (in supervisor addons store at top right, or click button below if you have configured my HA)
+   [![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Falexbelgium%2Fhassio-addons)
 1. Install this add-on.
 1. Click the `Save` button to store your configuration.
 1. Start the add-on.
@@ -53,7 +54,7 @@ comparison to installing any other Hass.io add-on.
 1. Read how to get devices into your [Home Assistant instance via the MQTT plugin](https://github.com/jokob-sk/NetAlertX/blob/main/docs/HOME_ASSISTANT.md)
 1. Back everything up by following the [Backups documentation](https://github.com/jokob-sk/NetAlertX/blob/main/docs/BACKUPS.md).
 
-Webui can be found at <http://homeassistant:20211> or using HA ingress
+Webui can be found at <http://homeassistant.local:20211> or using HA ingress
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/fd74af43-091a-4f38-9879-037ca64cfab9" />
 

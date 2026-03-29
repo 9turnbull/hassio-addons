@@ -1,4 +1,16 @@
 
+## 4.0.17.2953 (2026-03-28)
+- Update to latest version from linuxserver/docker-sonarr (changelog : https://github.com/linuxserver/docker-sonarr/releases)
+
+## 4.0.17.2952 (2026-03-21)
+- Update to latest version from linuxserver/docker-sonarr (changelog : https://github.com/linuxserver/docker-sonarr/releases)
+
+## 4.0.16.2946-3 (2026-02-25)
+- Symlink system ffprobe to /app/sonarr/bin/ where Sonarr expects it (fixes https://github.com/alexbelgium/hassio-addons/issues/2451)
+
+## 4.0.16.2946-2 (2026-02-06)
+- Add ffmpeg to provide ffprobe for runtime detection (fixes https://github.com/alexbelgium/hassio-addons/issues/2451)
+
 ## 4.0.16.2946-1 (2026-01-08)
 - ⚠ MAJOR CHANGE : switch to the new config logic from homeassistant. Your configuration files will have migrated from /config/addons_config/sonarr to a folder only accessible from my Filebrowser addon called /addon_configs/xxx-sonarr_nas. This avoids the addon to mess with your homeassistant configuration folder, and allows to backup the options. Migration of data should be automatic. Please be sure to update all your links however ! For more information, see here : https://developers.home-assistant.io/blog/2023/11/06/public-addon-config/
 

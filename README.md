@@ -56,19 +56,19 @@ If you want to do add the repository manually, please follow the procedure highl
 
 ### Number of addons
 
-- In the repository : 120
-- Installed : 69094
+- In the repository : 127
+- Installed : 128014
 
 ### Top 3
 
-1. Filebrowser (8649x)
-2. Portainer (4066x)
-3. Netalertx (3804x)
+1. Filebrowser (24134x)
+2. Portainer (14344x)
+3. Postgres_17 (5642x)
 
 ### Architectures used
 
-- amd64: 64%
-- aarch64: 36%
+- amd64: 65%
+- aarch64: 35%
 - %%STATS_ARMV7%%
 
 ### Stars evolution
@@ -92,6 +92,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 ![ingress][ingress-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003;  [Baikal](baikal/) : Calendar+Contacts server
 
@@ -108,11 +110,21 @@ If you want to do add the repository manually, please follow the procedure highl
 ![amd64][amd64-badge]
 ![ingress][ingress-badge]
 ![mqtt][mqtt-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003;  [Bazarr NAS](bazarr/) : Companion application to Sonarr and Radarr to download subtitles
 
 &emsp;&emsp;![Version](https://img.shields.io/badge/dynamic/yaml?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fbazarr%2Fconfig.yaml)
 ![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fbazarr%2Fupdater.json)
+![aarch64][aarch64-badge]
+![amd64][amd64-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
+
+&#10003; ![image](https://api.iconify.design/mdi/file-pdf-box.svg) [BentoPDF](bentopdf/) : Privacy-first PDF toolkit. 50+ tools, all processing client-side in the browser. Files never leave your device.
+
+&emsp;&emsp;![Version](https://img.shields.io/badge/dynamic/yaml?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fbentopdf%2Fconfig.yaml)
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 
@@ -124,6 +136,16 @@ If you want to do add the repository manually, please follow the procedure highl
 ![amd64][amd64-badge]
 ![ingress][ingress-badge]
 
+&#10003; ![image](https://api.iconify.design/mdi/bird.svg) [BirdNET-PiPy](birdnet-pipy/) : BirdNET-PiPy bird detection with a modern web dashboard
+
+&emsp;&emsp;![Version](https://img.shields.io/badge/dynamic/yaml?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fbirdnet-pipy%2Fconfig.yaml)
+![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fbirdnet-pipy%2Fupdater.json)
+![aarch64][aarch64-badge]
+![amd64][amd64-badge]
+![ingress][ingress-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
+
 &#10003; ![image](https://api.iconify.design/mdi/bird.svg) [BirdNET-pi](birdnet-pi/) : Realtime acoustic bird classification system
 
 &emsp;&emsp;![Version](https://img.shields.io/badge/dynamic/yaml?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fbirdnet-pi%2Fconfig.yaml)
@@ -132,6 +154,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![amd64][amd64-badge]
 ![ingress][ingress-badge]
 ![mqtt][mqtt-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003; ![image](https://api.iconify.design/mdi/bird.svg) [Birdnet-go](birdnet-go/) : Realtime BirdNET soundscape analyzer
 
@@ -142,6 +166,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![ingress][ingress-badge]
 ![MariaDB][mariadb-badge]
 ![mqtt][mqtt-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003;  [Booksonic air](booksonic_air/) : platform for accessing the audiobooks you own wherever you are
 
@@ -149,6 +175,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fbooksonic_air%2Fupdater.json)
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003; ![image](https://api.iconify.design/mdi/monitor.svg) [Brave](browser_brave/) : Brave browser
 
@@ -172,6 +200,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 ![ingress][ingress-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003; ![image](https://api.iconify.design/mdi/library.svg) [Calibre-web](calibre_web/) : Browsing, reading and downloading eBooks using an existing Calibre database
 
@@ -180,6 +210,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 ![ingress][ingress-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003;  [Castsponsorskip](sponsorblockcast/) : Skip YouTube ads and sponsorships on all local Google Cast devices
 
@@ -196,6 +228,14 @@ If you want to do add the repository manually, please follow the procedure highl
 ![amd64][amd64-badge]
 ![ingress][ingress-badge]
 
+&#10003; ![image](https://api.iconify.design/mdi/movie-search.svg) [Cleanuparr](cleanuparr/) : Automatically removes stuck and unwanted downloads from your *arr and download clients
+
+&emsp;&emsp;![Version](https://img.shields.io/badge/dynamic/yaml?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fcleanuparr%2Fconfig.yaml)
+![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fcleanuparr%2Fupdater.json)
+![aarch64][aarch64-badge]
+![amd64][amd64-badge]
+![ingress][ingress-badge]
+
 &#10003; ![image](https://api.iconify.design/mdi/file-search.svg) [Cloudcommander](cloudcommander/) : Cloud Commander a file manager for the web with console and editor
 
 &emsp;&emsp;![Version](https://img.shields.io/badge/dynamic/yaml?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fcloudcommander%2Fconfig.yaml)
@@ -203,6 +243,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 ![ingress][ingress-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003; ![image](https://api.iconify.design/mdi/book-open.svg) [Codex](codex/) : Web based comic archive browser and reader
 
@@ -211,6 +253,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 ![ingress][ingress-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003;  [Collabora](collabora/) : Collabora Online office suite
 
@@ -225,6 +269,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fcomixed%2Fupdater.json)
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003;  [Elasticsearch server](elasticsearch/) : Free and Open, Distributed, RESTful Search Engine
 
@@ -239,6 +285,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 ![ingress][ingress-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003; ![image](https://api.iconify.design/mdi/emby.svg) [Emby Beta](emby_beta/) : A free Software Media System that puts you in control of managing and streaming your media (beta version)
 
@@ -247,6 +295,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 ![ingress][ingress-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003;  [Ente](ente/) : Self-hosted, end-to-end-encrypted photo & video storage (Ente server + MinIO)
 
@@ -254,6 +304,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fente%2Fupdater.json)
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003;  [Epic Games Free](epicgamesfree/) : Automatically login and redeem promotional free games from Epic Games Store
 
@@ -269,14 +321,18 @@ If you want to do add the repository manually, please follow the procedure highl
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 ![ingress][ingress-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
-&#10003; ![image](https://api.iconify.design/mdi/file-search.svg) [Filebrowser (8649x)](filebrowser/) : filebrowser provides a file managing interface within a specified directory and it can be used to upload, delete, preview, rename and edit your files
+&#10003; ![image](https://api.iconify.design/mdi/file-search.svg) [Filebrowser (24134x)](filebrowser/) : filebrowser provides a file managing interface within a specified directory and it can be used to upload, delete, preview, rename and edit your files
 
 &emsp;&emsp;![Version](https://img.shields.io/badge/dynamic/yaml?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Ffilebrowser%2Fconfig.yaml)
 ![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Ffilebrowser%2Fupdater.json)
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 ![ingress][ingress-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003;  [Firefly iii](fireflyiii/) : A free and open source personal finance manager
 
@@ -366,6 +422,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 ![MariaDB][mariadb-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003; ![image](https://api.iconify.design/mdi/file-search.svg) [Immich Cuda](immich_cuda/) : Self-hosted photo and video backup solution directly from your mobile phone
 
@@ -374,6 +432,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![aarch64no][aarch64no-badge]
 ![amd64][amd64-badge]
 ![MariaDB][mariadb-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003;  [Immich Frame](immich_frame/) : Display your immich gallery as a digital photo frame
 
@@ -389,6 +449,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![aarch64no][aarch64no-badge]
 ![amd64][amd64-badge]
 ![MariaDB][mariadb-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003;  [Immich Power Tools](immich_power_tools/) : Power tools for organizing your immich library
 
@@ -404,6 +466,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 ![MariaDB][mariadb-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003;  [Inadyn](inadyn/) : Inadyn is a small and simple Dynamic DNS, DDNS, client with HTTPS support. A large number of dynamic dns providers are supported (https://github.com/troglobit/inadyn#supported-providers). For those that are not, you can use a custom provider as per this project's documentation (https://github.com/nalipaz/hassio-addons/blob/master/README.md)
 
@@ -418,19 +482,23 @@ If you want to do add the repository manually, please follow the procedure highl
 ![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fjackett%2Fupdater.json)
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
-&#10003; ![image](https://api.iconify.design/mdi/billiards-rack.svg) [Jellyfin NAS](jellyfin/) : A Free Software Media System that puts you in control of managing and streaming your media
+&#10003; ![image](https://api.iconify.design/mdi/billiards-rack.svg) [Jellyfin NAS](jellyfin/) : A free Software Media System that puts you in control of managing and streaming your media
 
 &emsp;&emsp;![Version](https://img.shields.io/badge/dynamic/yaml?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fjellyfin%2Fconfig.yaml)
 ![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fjellyfin%2Fupdater.json)
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 ![ingress][ingress-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
-&#10003;  [Jellyseerr](jellyseerr/) : Fork of overseerr for jellyfin support
+&#10003;  [Jellyseerr (deprecated)](zzz_archived_jellyseerr/) : Fork of overseerr for jellyfin support (deprecated, migrate to Seerr add-on)
 
-&emsp;&emsp;![Version](https://img.shields.io/badge/dynamic/yaml?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fjellyseerr%2Fconfig.yaml)
-![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fjellyseerr%2Fupdater.json)
+&emsp;&emsp;![Version](https://img.shields.io/badge/dynamic/yaml?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fzzz_archived_jellyseerr%2Fconfig.yaml)
+![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fzzz_archived_jellyseerr%2Fupdater.json)
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 
@@ -470,11 +538,27 @@ If you want to do add the repository manually, please follow the procedure highl
 ![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Flidarr%2Fupdater.json)
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003;  [Linkwarden](linkwarden/) : collaborative bookmark manager to collect, organize, and preserve webpages and articles
 
 &emsp;&emsp;![Version](https://img.shields.io/badge/dynamic/yaml?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Flinkwarden%2Fconfig.yaml)
 ![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Flinkwarden%2Fupdater.json)
+![aarch64][aarch64-badge]
+![amd64][amd64-badge]
+
+&#10003; ![image](https://api.iconify.design/mdi/movie-search.svg) [Maintainerr](maintainerr/) : Rule-based media cleanup tool for Plex, Jellyfin and Emby. Creates collections and optionally deletes unwatched content.
+
+&emsp;&emsp;![Version](https://img.shields.io/badge/dynamic/yaml?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fmaintainerr%2Fconfig.yaml)
+![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fmaintainerr%2Fupdater.json)
+![aarch64][aarch64-badge]
+![amd64][amd64-badge]
+![ingress][ingress-badge]
+
+&#10003;  [Manyfold](manyfold/) : Manyfold 3D model manager as a Home Assistant add-on, using the upstream image with configurable library/index paths.
+
+&emsp;&emsp;![Version](https://img.shields.io/badge/dynamic/yaml?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fmanyfold%2Fconfig.yaml)
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 
@@ -518,6 +602,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fmylar3%2Fupdater.json)
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003;  [Navidrome](navidrome/) : Navidrome for Home Assistant
 
@@ -525,8 +611,10 @@ If you want to do add the repository manually, please follow the procedure highl
 ![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fnavidrome%2Fupdater.json)
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
-&#10003; ![image](https://api.iconify.design/mdi/wifi-check.svg) [NetAlertX](netalertx/) : 🖧🔍 WIFI / LAN scanner, intruder, and presence detector
+&#10003; ![image](https://api.iconify.design/mdi/wifi-check.svg) [NetAlertX](netalertx/) : 🖧🔍 Centralized network visibility and continuous asset discovery.
 
 &emsp;&emsp;![Version](https://img.shields.io/badge/dynamic/yaml?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fnetalertx%2Fconfig.yaml)
 ![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fnetalertx%2Fupdater.json)
@@ -535,7 +623,7 @@ If you want to do add the repository manually, please follow the procedure highl
 ![ingress][ingress-badge]
 ![mqtt][mqtt-badge]
 
-&#10003; ![image](https://api.iconify.design/mdi/wifi-check.svg) [NetAlertX Full Access](netalertx_fa/) : 🖧🔍 WIFI / LAN scanner, intruder, and presence detector
+&#10003; ![image](https://api.iconify.design/mdi/wifi-check.svg) [NetAlertX Full Access](netalertx_fa/) : 🖧🔍 Centralized network visibility and continuous asset discovery.
 
 &emsp;&emsp;![Version](https://img.shields.io/badge/dynamic/yaml?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fnetalertx_fa%2Fconfig.yaml)
 ![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fnetalertx_fa%2Fupdater.json)
@@ -545,6 +633,12 @@ If you want to do add the repository manually, please follow the procedure highl
 ![mqtt][mqtt-badge]
 ![full_access][full_access-badge]
 
+&#10003;  [NetBird Server](netbird-server/) : 🐦 NetBird self-hosted server stack (management, signal, relay, dashboard, Caddy)
+
+&emsp;&emsp;![Version](https://img.shields.io/badge/dynamic/yaml?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fnetbird-server%2Fconfig.yaml)
+![aarch64][aarch64-badge]
+![amd64][amd64-badge]
+
 &#10003; ![image](https://api.iconify.design/mdi/cloud.svg) [Nextcloud](nextcloud/) : Nextcloud for Homeassistant
 
 &emsp;&emsp;![Version](https://img.shields.io/badge/dynamic/yaml?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fnextcloud%2Fconfig.yaml)
@@ -552,6 +646,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 ![MariaDB][mariadb-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003; ![image](https://api.iconify.design/mdi/arrow-down-bold-circle-outline.svg) [Nzbget](nzbget/) : usenet downloader
 
@@ -560,6 +656,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 ![ingress][ingress-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003;  [Omada (obsolete)](zzz_archived_omada/) : TP-Link Omada Controller (obsolete, use https://github.com/jkunczik/home-assistant-omada)
 
@@ -575,10 +673,10 @@ If you want to do add the repository manually, please follow the procedure highl
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 
-&#10003;  [Ombi](ombi/) : Self-hosted Plex Request and user management system
+&#10003;  [Ombi (obsolete)](zzz_archived_ombi/) : Self-hosted Plex Request and user management system (obsolete, migrate to the Seerr add-on)
 
-&emsp;&emsp;![Version](https://img.shields.io/badge/dynamic/yaml?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fombi%2Fconfig.yaml)
-![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fombi%2Fupdater.json)
+&emsp;&emsp;![Version](https://img.shields.io/badge/dynamic/yaml?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fzzz_archived_ombi%2Fconfig.yaml)
+![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fzzz_archived_ombi%2Fupdater.json)
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 
@@ -603,10 +701,10 @@ If you want to do add the repository manually, please follow the procedure highl
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 
-&#10003;  [Overseerr](overseerr/) : Request management and media discovery tool built to work with your existing Plex ecosystem
+&#10003;  [Overseerr (deprecated)](zzz_archived_overseerr/) : Request management and media discovery tool built to work with your existing Plex ecosystem (deprecated, migrate to Seer add-on)
 
-&emsp;&emsp;![Version](https://img.shields.io/badge/dynamic/yaml?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Foverseerr%2Fconfig.yaml)
-![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Foverseerr%2Fupdater.json)
+&emsp;&emsp;![Version](https://img.shields.io/badge/dynamic/yaml?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fzzz_archived_overseerr%2Fconfig.yaml)
+![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fzzz_archived_overseerr%2Fupdater.json)
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 
@@ -618,6 +716,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![amd64][amd64-badge]
 ![ingress][ingress-badge]
 ![MariaDB][mariadb-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003;  [Piwigo](piwigo/) : Piwigo is a photo gallery software for the web
 
@@ -625,6 +725,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fpiwigo%2Fupdater.json)
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003;  [Plex NAS](plex/) : Plex organizes video, music and photos from personal media libraries and streams them to smart TVs, streaming boxes and mobile devices
 
@@ -632,8 +734,10 @@ If you want to do add the repository manually, please follow the procedure highl
 ![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fplex%2Fupdater.json)
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
-&#10003; ![image](https://api.iconify.design/mdi/docker.svg) [Portainer (4066x)](portainer/) : Manage your Docker environment with ease
+&#10003; ![image](https://api.iconify.design/mdi/docker.svg) [Portainer (14344x)](portainer/) : Manage your Docker environment with ease
 
 &emsp;&emsp;![Version](https://img.shields.io/badge/dynamic/yaml?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fportainer%2Fconfig.yaml)
 ![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fportainer%2Fupdater.json)
@@ -641,7 +745,7 @@ If you want to do add the repository manually, please follow the procedure highl
 ![amd64][amd64-badge]
 ![ingress][ingress-badge]
 
-&#10003;  [Portainer (4066x) Agent](portainer_agent/) : An agent used to manage all the resources in a Swarm cluster
+&#10003;  [Portainer (14344x) Agent](portainer_agent/) : An agent used to manage all the resources in a Swarm cluster
 
 &emsp;&emsp;![Version](https://img.shields.io/badge/dynamic/yaml?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fportainer_agent%2Fconfig.yaml)
 ![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fportainer_agent%2Fupdater.json)
@@ -663,13 +767,15 @@ If you want to do add the repository manually, please follow the procedure highl
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 
-&#10003;  [Prowlarr NAS](prowlarr/) : Torrent Trackers and Usenet indexers offering complete management ofSonarr, Radarr, Lidarr, and Readarr indexers with no per app setup required
+&#10003; ![image](https://api.iconify.design/mdi/magnify.svg) [Prowlarr NAS](prowlarr/) : Torrent Trackers and Usenet indexers offering complete management ofSonarr, Radarr, Lidarr, and Readarr indexers with no per app setup required
 
 &emsp;&emsp;![Version](https://img.shields.io/badge/dynamic/yaml?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fprowlarr%2Fconfig.yaml)
 ![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fprowlarr%2Fupdater.json)
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 ![ingress][ingress-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003; ![image](https://api.iconify.design/mdi/movie-outline.svg) [Radarr](radarr/) : A fork of Sonarr to work with movies like Couchpotato
 
@@ -678,6 +784,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 ![ingress][ingress-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003; ![image](https://api.iconify.design/mdi/download-circle.svg) [Readarr](readarr/) : Book manager and automation
 
@@ -686,6 +794,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 ![ingress][ingress-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003;  [Repository Updater](addons_updater/) : Automatic addons update by aligning version tag with upstream releases
 
@@ -707,6 +817,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 ![ingress][ingress-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003; ![image](https://api.iconify.design/mdi/arrow-down-bold-circle-outline.svg) [Sabnzbd](sabnzbd/) : Makes Usenet as simple and streamlined as possible by automating everything we can
 
@@ -714,6 +826,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fsabnzbd%2Fupdater.json)
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003; ![image](https://api.iconify.design/mdi/glasses.svg) [Scrutiny](scrutiny/) : Scrutiny webUI for smartd S.M.A.R.T monitoring
 
@@ -726,6 +840,7 @@ If you want to do add the repository manually, please follow the procedure highl
 &#10003; ![image](https://api.iconify.design/mdi/glasses.svg) [Scrutiny (Full Access)](scrutiny_fa/) : Scrutiny WebUI for smartd S.M.A.R.T monitoring (Full Access)
 
 &emsp;&emsp;![Version](https://img.shields.io/badge/dynamic/yaml?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fscrutiny_fa%2Fconfig.yaml)
+![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fscrutiny_fa%2Fupdater.json)
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 ![ingress][ingress-badge]
@@ -738,6 +853,16 @@ If you want to do add the repository manually, please follow the procedure highl
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 ![MariaDB][mariadb-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
+
+&#10003; ![image](https://api.iconify.design/mdi/movie-search.svg) [Seerr](seerr/) : Open-source media request and discovery manager for Jellyfin, Plex, and Emby
+
+&emsp;&emsp;![Version](https://img.shields.io/badge/dynamic/yaml?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fseerr%2Fconfig.yaml)
+![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fseerr%2Fupdater.json)
+![aarch64][aarch64-badge]
+![amd64][amd64-badge]
+![ingress][ingress-badge]
 
 &#10003;  [Signalk Server](signalk/) : An implementation of a Signal K central server for boats
 
@@ -760,6 +885,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 ![ingress][ingress-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003; ![image](https://api.iconify.design/mdi/chart-timeline.svg) [Spotweb](spotweb/) : Spotweb is a decentralized usenet community based on the Spotnet protocol
 
@@ -784,16 +911,12 @@ If you want to do add the repository manually, please follow the procedure highl
 ![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Ftdarr%2Fupdater.json)
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003;  [Teamspeak server](teamspeak/) : voice communication for online gaming, education and training
 
 &emsp;&emsp;![Version](https://img.shields.io/badge/dynamic/yaml?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fteamspeak%2Fconfig.yaml)
-![aarch64][aarch64-badge]
-![amd64][amd64-badge]
-
-&#10003;  [Tor with bridges](tor/) : Protect your privacy and access Home Assistant via Tor
-
-&emsp;&emsp;![Version](https://img.shields.io/badge/dynamic/yaml?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Ftor%2Fconfig.yaml)
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 
@@ -804,6 +927,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 ![ingress][ingress-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003; ![image](https://api.iconify.design/mdi/transmission-tower.svg) [Transmission Openvpn](transmission_openvpn/) : Docker container running Transmission torrent client with WebUI over an OpenVPN tunnel
 
@@ -812,6 +937,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 ![ingress][ingress-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003;  [Ubooquity](ubooquity/) : Free, lightweight, and easy-to-use home server for your comics and ebooks
 
@@ -819,6 +946,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fubooquity%2Fupdater.json)
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003;  [Unpackerr](unpackerr/) : Unpacks RARd files for Sonarr, Lidarr and Radarr
 
@@ -826,6 +955,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Funpackerr%2Fupdater.json)
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003;  [Vaultwarden](bitwarden/) : Open source password management solution
 
@@ -841,6 +972,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 ![ingress][ingress-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003; ![image](https://api.iconify.design/mdi/monitor.svg) [Webtop xfce](webtop/) : Full linux desktop environment accessible via any modern web browser
 
@@ -849,6 +982,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 ![ingress][ingress-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003;  [Webtrees](webtrees/) : web's leading on-line collaborative genealogy application
 
@@ -857,6 +992,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 ![MariaDB][mariadb-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003;  [Wger](wger/) : manage your personal workouts, weight and diet plans
 
@@ -869,7 +1006,7 @@ If you want to do add the repository manually, please follow the procedure highl
 
 &emsp;&emsp;![Version](https://img.shields.io/badge/dynamic/yaml?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fwhatsapper%2Fconfig.yaml)
 ![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fwhatsapper%2Fupdater.json)
-![aarch64no][aarch64no-badge]
+![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 
 &#10003; ![image](https://api.iconify.design/mdi/magnify.svg) [Whoogle Search](whoogle/) : Self-hosted, ad-free, privacy-respecting metasearch engine
@@ -910,6 +1047,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 ![ingress][ingress-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003;  [zzz_archived - Paperless NGX](zzz_archived_paperless_ngx/) : Scan, index and archive all your physical documents
 
@@ -918,6 +1057,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 ![MariaDB][mariadb-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 &#10003;  [zzz_archived - Papermerge](zzz_archived_papermerge/) : Open source document management system (DMS)
 
@@ -925,11 +1066,18 @@ If you want to do add the repository manually, please follow the procedure highl
 ![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fzzz_archived_papermerge%2Fupdater.json)
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
+![smb][smb-badge]
 
 &#10003;  [zzz_archived - Plex meta manager](zzz_archived_plex_meta_manager/) : Python script to update metadata information for movies, shows, and collections as well as automatically build collections
 
 &emsp;&emsp;![Version](https://img.shields.io/badge/dynamic/yaml?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fzzz_archived_plex_meta_manager%2Fconfig.yaml)
 ![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fzzz_archived_plex_meta_manager%2Fupdater.json)
+![aarch64][aarch64-badge]
+![amd64][amd64-badge]
+
+&#10003;  [zzz_archived - Tor with bridges](zzz_archived_tor/) : Protect your privacy and access Home Assistant via Tor
+
+&emsp;&emsp;![Version](https://img.shields.io/badge/dynamic/json?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fzzz_archived_tor%2Fconfig.json)
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
 
@@ -939,6 +1087,8 @@ If you want to do add the repository manually, please follow the procedure highl
 ![Update](https://img.shields.io/badge/dynamic/json?label=Updated&query=%24.last_update&url=https%3A%2F%2Fraw.githubusercontent.com%2Falexbelgium%2Fhassio-addons%2Fmaster%2Fzzz_archived_code-server%2Fupdater.json)
 ![aarch64][aarch64-badge]
 ![amd64][amd64-badge]
+![smb][smb-badge]
+![localdisks][localdisks-badge]
 
 
 ## Support

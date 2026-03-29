@@ -129,13 +129,6 @@ if bashio::config.true 'openvpn_enabled'; then
     vpn_openvpn=true
 fi
 
-if [[ "${vpn_openvpn}" == true ]] && ! bashio::config.true 'openvpn_alt_mode'; then
-    VPN_INTERFACE="tun0"
-    bashio::log.info "VPN monitor set to query external IP through interface ${VPN_INTERFACE} (interface binding)."
-else
-    VPN_INTERFACE=""
-fi
-
 if bashio::config.true 'wireguard_enabled'; then
     vpn_wireguard=true
 fi
@@ -147,6 +140,19 @@ fi
 
 if [[ "${vpn_openvpn}" == true && "${vpn_wireguard}" == true ]]; then
     bashio::log.error "Both OpenVPN and WireGuard are enabled. Only one VPN mode is supported."
+    bashio::addon.stop
+    exit 1
+fi
+
+if [[ "${vpn_openvpn}" == true ]]; then
+    VPN_INTERFACE=$(cat "/var/run/openvpn/interface")
+    bashio::log.info "VPN monitor set to query external IP through interface ${VPN_INTERFACE} (interface binding)."
+elif [[ "${vpn_wireguard}" == true ]]; then
+    VPN_INTERFACE=$(cat "/var/run/wireguard/interface")
+    bashio::log.info "VPN monitor set to query external IP through interface ${VPN_INTERFACE} (interface binding)."
+fi
+if [[ -z "${VPN_INTERFACE}" ]] || ! ip link show "${VPN_INTERFACE}" > /dev/null 2>&1 ; then
+    bashio::log.error "VPN interface not found."
     bashio::addon.stop
     exit 1
 fi
@@ -172,7 +178,7 @@ read -r VPN_IP VPN_COUNTRY <<< "${VPN_INFO_OUT}"
 bashio::log.info "VPN external IP: ${VPN_IP} (${VPN_COUNTRY})"
 
 while true; do
-    sleep "${VPN_CHECK_INTERVAL}"
+    sleep "${VPN_CHECK_INTERVAL}" & wait $!
 
     if ! current_out="$(get_ip_info)"; then
         bashio::log.warning "Failed to refresh external IP; keeping previous assumptions."

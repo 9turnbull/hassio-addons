@@ -37,7 +37,7 @@ RUN \
     && curl -f -L -s -S "https://raw.githubusercontent.com/meisnate12/Plex-Meta-Manager/master/config/config.yml.template" -o /templates/config.yml
 
 # Global LSIO modifications
-ADD "https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.templates/ha_lsio.sh" "/ha_lsio.sh"
+COPY ha_lsio.sh /ha_lsio.sh
 ARG CONFIGLOCATION="/config/addons_config/kometa"
 RUN chmod 744 /ha_lsio.sh && if grep -qr "lsio" /etc; then /ha_lsio.sh "$CONFIGLOCATION"; fi && rm /ha_lsio.sh
 
@@ -47,7 +47,7 @@ RUN chmod 744 /ha_lsio.sh && if grep -qr "lsio" /etc; then /ha_lsio.sh "$CONFIGL
 
 # Add rootfs
 COPY rootfs/ /
-RUN find . -type f \( -name "*.sh" -o -name "run" \) -print -exec chmod +x {} \;
+RUN find . -type f \( -name "*.sh" -o -name "run" -o -name "finish" \) -print -exec chmod +x {} \;
 
 # Uses /bin for compatibility purposes
 # hadolint ignore=DL4005
@@ -58,14 +58,14 @@ RUN if [ ! -f /bin/sh ] && [ -f /usr/bin/sh ]; then ln -s /usr/bin/sh /bin/sh; f
 ARG MODULES="00-banner.sh 01-custom_script.sh 00-global_var.sh"
 
 # Automatic modules download
-ADD "https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.templates/ha_automodules.sh" "/ha_automodules.sh"
+COPY ha_automodules.sh /ha_automodules.sh
 RUN chmod 744 /ha_automodules.sh && /ha_automodules.sh "$MODULES" && rm /ha_automodules.sh
 
 # Manual apps
 ENV PACKAGES=""
 
 # Automatic apps & bashio
-ADD "https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.templates/ha_autoapps.sh" "/ha_autoapps.sh"
+COPY ha_autoapps.sh /ha_autoapps.sh
 RUN chmod 744 /ha_autoapps.sh && /ha_autoapps.sh "$PACKAGES" && rm /ha_autoapps.sh
 
 ################
@@ -74,9 +74,12 @@ RUN chmod 744 /ha_autoapps.sh && /ha_autoapps.sh "$PACKAGES" && rm /ha_autoapps.
 
 # Add entrypoint
 ENV S6_STAGE2_HOOK=/ha_entrypoint.sh
-ADD "https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.templates/ha_entrypoint.sh" "/ha_entrypoint.sh"
+COPY ha_entrypoint.sh /ha_entrypoint.sh
 RUN chmod 777 /ha_entrypoint.sh
 
+# Install bashio
+COPY bashio-standalone.sh /usr/local/lib/bashio-standalone.sh
+RUN chmod 0755 /usr/local/lib/bashio-standalone.sh
 
 #
 #WORKDIR /

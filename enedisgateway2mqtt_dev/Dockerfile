@@ -2,11 +2,11 @@
 #  ALEXBELGIUM'S DOCKERFILE  #
 #============================#
 #           _.------.
-#       _.-`    ('>.-`"0.8.13""-.
+#       _.-`    ('>.-`"""-.
 # '.--'`       _'`   _ .--.)
 #    -'         '-.-';`   `
 #    ' -      _.'  ``'--.
-#        '---`    .-'"0.8.13"`
+#        '---`    .-'""`
 #               /`
 #=== Home Assistant Addon ===#
 
@@ -33,7 +33,7 @@ ENV S6_CMD_WAIT_FOR_SERVICES=1 \
 
 # Add rootfs
 COPY rootfs/ /
-RUN find . -type f \( -name "*.sh" -o -name "run" \) -print -exec chmod +x {} \;
+RUN find . -type f \( -name "*.sh" -o -name "run" -o -name "finish" \) -print -exec chmod +x {} \;
 
 # Uses /bin for compatibility purposes
 # hadolint ignore=DL4005
@@ -44,14 +44,14 @@ RUN if [ ! -f /bin/sh ] && [ -f /usr/bin/sh ]; then ln -s /usr/bin/sh /bin/sh; f
 ARG MODULES="00-banner.sh 01-custom_script.sh 00-global_var.sh"
 
 # Automatic modules download
-ADD "https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.templates/ha_automodules.sh" "/ha_automodules.sh"
+COPY ha_automodules.sh /ha_automodules.sh
 RUN chmod 744 /ha_automodules.sh && /ha_automodules.sh "$MODULES" && rm /ha_automodules.sh
 
 # Manual apps
 ENV PACKAGES="nginx yamllint"
 
 # Automatic apps & bashio
-ADD "https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.templates/ha_autoapps.sh" "/ha_autoapps.sh"
+COPY ha_autoapps.sh /ha_autoapps.sh
 RUN chmod 744 /ha_autoapps.sh && /ha_autoapps.sh "$PACKAGES" && rm /ha_autoapps.sh
 
 ################
@@ -60,9 +60,12 @@ RUN chmod 744 /ha_autoapps.sh && /ha_autoapps.sh "$PACKAGES" && rm /ha_autoapps.
 
 # Add entrypoint
 ENV S6_STAGE2_HOOK=/ha_entrypoint.sh
-ADD "https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.templates/ha_entrypoint.sh" "/ha_entrypoint.sh"
+COPY ha_entrypoint.sh /ha_entrypoint.sh
 RUN chmod 777 /ha_entrypoint.sh
 
+# Install bashio
+COPY bashio-standalone.sh /usr/local/lib/bashio-standalone.sh
+RUN chmod 0755 /usr/local/lib/bashio-standalone.sh
 
 
 ENTRYPOINT [ "/usr/bin/env" ]

@@ -46,7 +46,7 @@ Webui can be found at `<your-ip>:22300`.
 |--------|------|---------|-------------|
 | `APP_BASE_URL` | str | `http://your_domain:port` | Base public URL where the service will be running |
 | `data_location` | str | `/config/addons_config/joplin` | Path where Joplin data is stored |
-| `DB_CLIENT` | str | | Database client type (e.g., `pg` for PostgreSQL) |
+| `DB_CLIENT` | str | | Database client type. Only `pg` (PostgreSQL) is supported. MariaDB/MySQL is NOT supported. |
 | `POSTGRES_HOST` | str | | PostgreSQL server hostname |
 | `POSTGRES_PORT` | int | | PostgreSQL server port |
 | `POSTGRES_DATABASE` | str | | PostgreSQL database name |
@@ -67,8 +67,8 @@ Webui can be found at `<your-ip>:22300`.
 APP_BASE_URL: "http://192.168.1.100:22300"
 data_location: "/config/addons_config/joplin"
 DB_CLIENT: "pg"
-POSTGRES_HOST: "core-mariadb"
-POSTGRES_PORT: 3306
+POSTGRES_HOST: "your-postgres-host"
+POSTGRES_PORT: 5432
 POSTGRES_DATABASE: "joplin"
 POSTGRES_USER: "joplin"
 POSTGRES_PASSWORD: "secure_password"
@@ -84,11 +84,13 @@ MAILER_NOREPLY_EMAIL: "noreply@yourdomain.com"
 
 ### Database Setup
 
-Joplin Server uses SQLite by default, but for production use, PostgreSQL is recommended:
+Joplin Server uses SQLite by default, but for production use, PostgreSQL is recommended.
 
-1. Install and configure a PostgreSQL addon (e.g., MariaDB addon)
-2. Create a database and user for Joplin
-3. Configure the PostgreSQL options in the Joplin addon
+> **Important:** Joplin Server only supports **PostgreSQL** as an external database. MariaDB/MySQL is **not** supported. You must install a PostgreSQL addon (not the MariaDB addon) and set `DB_CLIENT` to `pg`.
+
+1. Install and configure a PostgreSQL addon
+2. Create a database and user for Joplin in PostgreSQL
+3. Configure the PostgreSQL options in the Joplin addon (use port `5432`, not `3306`)
 4. Restart the addon
 
 Make sure the provided database and user exist as the server will not create them automatically.
@@ -114,7 +116,8 @@ This addon supports custom scripts and environment variables through the `addon_
 The installation of this add-on is pretty straightforward and not different in
 comparison to installing any other Hass.io add-on.
 
-1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
+1. Add my add-ons repository to your home assistant instance (in supervisor addons store at top right, or click button below if you have configured my HA)
+   [![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Falexbelgium%2Fhassio-addons)
 1. Install this add-on.
 1. Click the `Save` button to store your configuration.
 1. Start the add-on.

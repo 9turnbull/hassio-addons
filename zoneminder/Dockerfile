@@ -16,7 +16,7 @@
 
 ARG BUILD_FROM
 ARG BUILD_VERSION
-ARG BUILD_UPSTREAM="1.36.37"
+ARG BUILD_UPSTREAM="1.38.1"
 FROM tritruongtr/zoneminder:latest
 
 ##################
@@ -27,7 +27,6 @@ FROM tritruongtr/zoneminder:latest
 ENV S6_CMD_WAIT_FOR_SERVICES=1 \
     S6_CMD_WAIT_FOR_SERVICES_MAXTIME=0 \
     S6_SERVICES_GRACETIME=0
-
 
 # Change config location
 # hadolint ignore=DL4006
@@ -44,7 +43,7 @@ RUN sed -i 's|/etc/zm.conf|/config/addons_config/zoneminder/zm.conf|g' /usr/loca
 
 # Copy local files
 COPY rootfs/ /
-RUN find . -type f \( -name "*.sh" -o -name "run" \) -print -exec chmod +x {} \;
+RUN find . -type f \( -name "*.sh" -o -name "run" -o -name "finish" \) -print -exec chmod +x {} \;
 
 # Uses /bin for compatibility purposes
 # hadolint ignore=DL4005
@@ -55,14 +54,15 @@ RUN if [ ! -f /bin/sh ] && [ -f /usr/bin/sh ]; then ln -s /usr/bin/sh /bin/sh; f
 ARG MODULES="00-banner.sh 01-custom_script.sh"
 
 # Automatic modules download
-ADD "https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.templates/ha_automodules.sh" "/ha_automodules.sh"
+COPY ha_automodules.sh /ha_automodules.sh
 RUN chmod 744 /ha_automodules.sh && /ha_automodules.sh "$MODULES" && rm /ha_automodules.sh
 
 # Manual apps
 ENV PACKAGES=""
 
 # Automatic apps & bashio
-ADD "https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.templates/ha_autoapps.sh" "/ha_autoapps.sh"
+COPY ha_autoapps.sh /ha_autoapps.sh
+RUN sed -i "/chmod 755/a sed -i 's|micro||g' /ha_automatic_packages.sh" /ha_autoapps.sh
 RUN chmod 744 /ha_autoapps.sh && /ha_autoapps.sh "$PACKAGES" && rm /ha_autoapps.sh
 
 ################
@@ -71,15 +71,12 @@ RUN chmod 744 /ha_autoapps.sh && /ha_autoapps.sh "$PACKAGES" && rm /ha_autoapps.
 
 # Add entrypoint
 ENV S6_STAGE2_HOOK=/ha_entrypoint.sh
-ADD "https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.templates/ha_entrypoint.sh" "/ha_entrypoint.sh"
+COPY ha_entrypoint.sh /ha_entrypoint.sh
 RUN chmod 777 /ha_entrypoint.sh
 
-COPY rootfs/ /
-RUN find . -type f \( -name "*.sh" -o -name "run" \) -print -exec chmod +x {} \;
-
-ADD "https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.templates/bashio-standalone.sh" "/.bashio-standalone.sh"
-RUN chmod 777 /.bashio-standalone.sh
-
+# Install bashio
+COPY bashio-standalone.sh /usr/local/lib/bashio-standalone.sh
+RUN chmod 0755 /usr/local/lib/bashio-standalone.sh
 
 ENTRYPOINT [ "/usr/bin/env" ]
 CMD [ "/ha_entrypoint.sh" ]

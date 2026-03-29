@@ -1,3 +1,8 @@
+## 1.6.0-bullseye-3 (13-03-2026)
+- Fix PROXY_ALLOWED_IPS_REGEX default from invalid regex "*" to ".*"
+
+## 1.6.0-bullseye-2 (26-02-2026)
+- Minor bugs fixed
 
 ## 1.6.0-bullseye (2025-12-24)
 - Update to latest version from abesnier/guacamole

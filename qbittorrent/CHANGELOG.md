@@ -1,3 +1,29 @@
+## 5.1.4-20 (26-03-2026)
+- If multiple openvpn configs are available and none is defined in the options, use a random one
+- Add upnp for vpn
+
+## 5.1.4-16 (16-02-2026)
+- Fix interface binding when VPN is disabled, so qBittorrent can use all available interfaces instead of staying on a previous VPN interface
+
+## 5.1.4-15 (08-02-2026)
+- Support preshared keys (airvpn for example)
+- Support multiple address fields
+
+## 5.1.4-12 (08-02-2026)
+- Prefer ipv4 to resolve over ipv6
+- Fix ipv6 resolve address on some wireguard configurations
+- Fix issues with interfaces names longer than 15 characters
+
+## 5.1.4-9 (05-02-2026)
+- Move OpenVPN/WireGuard config filename validation from schema to runtime scripts
+- Validate config name only when the related VPN mode is enabled
+
+## 5.1.4-8 (05-02-2026)
+- Allow more complex vpn config names
+- Rewrite the openvpn and wireguard scripts in order to make them more robust, secure, and compatible with more suppliers @litinoveweedle
+
+## 5.1.4-6 (03-02-2026)
+- Minor bugs fixed
 ## 5.1.4-5 (23-01-2026)
 - Minor bugs fixed
 ## 5.1.4-4 (2025-12-30)

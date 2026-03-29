@@ -56,7 +56,7 @@ USER 0
 
 # Add rootfs
 COPY rootfs/ /
-RUN find . -type f \( -name "*.sh" -o -name "run" \) -print -exec chmod +x {} \;
+RUN find . -type f \( -name "*.sh" -o -name "run" -o -name "finish" \) -print -exec chmod +x {} \;
 
 # Bring in jq + gosu (and their libs). NO apk in final stage.
 COPY --from=ha_tools /out/ /
@@ -78,7 +78,7 @@ RUN curl -L -o /usr/local/bin/jq "https://github.com/jqlang/jq/releases/download
 ARG MODULES="00-banner.sh"
 
 # Automatic modules download
-ADD "https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.templates/ha_automodules.sh" "/ha_automodules.sh"
+COPY ha_automodules.sh /ha_automodules.sh
 RUN chmod 744 /ha_automodules.sh \
     && /ha_automodules.sh "$MODULES" \
     && rm /ha_automodules.sh
@@ -89,7 +89,7 @@ RUN chmod 744 /ha_automodules.sh \
 ENV PACKAGES=""
 
 # Automatic apps & bashio
-ADD "https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.templates/ha_autoapps.sh" "/ha_autoapps.sh"
+COPY ha_autoapps.sh /ha_autoapps.sh
 RUN chmod 744 /ha_autoapps.sh \
     && /ha_autoapps.sh "$PACKAGES" \
     && rm /ha_autoapps.sh
@@ -98,13 +98,11 @@ RUN chmod 744 /ha_autoapps.sh \
 # 4 Entrypoint #
 ################
 ENV S6_STAGE2_HOOK=/ha_entrypoint.sh
-ADD "https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.templates/ha_entrypoint.sh" "/ha_entrypoint.sh"
+COPY ha_entrypoint.sh /ha_entrypoint.sh
+RUN chmod 777 /ha_entrypoint.sh
 
-# Entrypoint modifications
-ADD "https://raw.githubusercontent.com/alexbelgium/hassio-addons/master/.templates/ha_entrypoint_modif.sh" "/ha_entrypoint_modif.sh"
-RUN chmod 777 /ha_entrypoint.sh /ha_entrypoint_modif.sh \
-    && /ha_entrypoint_modif.sh \
-    && rm /ha_entrypoint_modif.sh
+COPY bashio-standalone.sh /.bashio-standalone.sh
+RUN chmod 0644 /.bashio-standalone.sh
 
 #WORKDIR /
 ENTRYPOINT [ "/usr/bin/env" ]

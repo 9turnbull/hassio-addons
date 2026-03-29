@@ -1,4 +1,29 @@
 
+## 2.46.0 (2026-03-28)
+- Update to latest version from browserless/chrome (changelog : https://github.com/browserless/chrome/releases)
+
+## 2.44.0 (2026-03-21)
+- Update to latest version from browserless/chrome (changelog : https://github.com/browserless/chrome/releases)
+## 2.43.0-2 (20-03-2026)
+- Minor bugs fixed
+
+## 2.43.0 (2026-03-14)
+- Update to latest version from browserless/chrome (changelog : https://github.com/browserless/chrome/releases)
+
+## 2.42.0 (2026-02-28)
+- Update to latest version from browserless/chrome (changelog : https://github.com/browserless/chrome/releases)
+
+## 2.41.0 (2026-02-21)
+- Update to latest version from browserless/chrome (changelog : https://github.com/browserless/chrome/releases)
+
+## 2.40.0 (2026-02-14)
+- Update to latest version from browserless/chrome (changelog : https://github.com/browserless/chrome/releases)
+## 2.39.0-2 (05-02-2026)
+- Minor bugs fixed
+
+## 2.39.0 (2026-02-04)
+- Update to latest version from browserless/chrome (changelog : https://github.com/browserless/chrome/releases)
+
 ## 2.38.3 (2026-01-14)
 - Update to latest version from browserless/chrome (changelog : https://github.com/browserless/chrome/releases)
 - Added support for configuring extra environment variables via the `env_vars` add-on option alongside config.yaml. See https://github.com/alexbelgium/hassio-addons/wiki/Add-Environment-variables-to-your-Addon-2 for details.

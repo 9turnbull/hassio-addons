@@ -60,6 +60,7 @@ Webui can be found at `<your-ip>:8080`. PostgreSQL/MySQL can be either internal 
 | `DISABLE_MACHINE_LEARNING` | bool | `false` | Disable ML features |
 | `MACHINE_LEARNING_WORKERS` | int | `1` | Number of ML workers |
 | `MACHINE_LEARNING_WORKER_TIMEOUT` | int | `120` | ML worker timeout (seconds) |
+| `VIPS_NOVECTOR` | bool | `false` | Set to `true` to export `VIPS_NOVECTOR=1` and work around aarch64 thumbnail generation issues |
 | `skip_permissions_check` | bool | `false` | Skip file permissions checking |
 
 ### Example Configuration
@@ -98,7 +99,8 @@ This addon supports custom scripts and environment variables through the `addon_
 The installation of this add-on is pretty straightforward and not different in
 comparison to installing any other Hass.io add-on.
 
-1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
+1. Add my add-ons repository to your home assistant instance (in supervisor addons store at top right, or click button below if you have configured my HA)
+   [![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Falexbelgium%2Fhassio-addons)
 1. Install this add-on.
 1. Click the `Save` button to store your configuration.
 1. Start the add-on.

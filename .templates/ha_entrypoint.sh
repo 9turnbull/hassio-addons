@@ -1,6 +1,5 @@
 #!/bin/bash
 # shellcheck shell=bash
-set -euo pipefail
 
 ##########################################
 # Detect if this is PID1 (main process)  #
@@ -29,7 +28,7 @@ pick_exec_dir() {
     if [ -d "$d" ] && [ -w "$d" ]; then
       # Create a tiny test executable to confirm "exec" works
       local t="${d%/}/.exec_test_$$"
-      printf '#!/bin/sh\necho ok\n' > "$t" 2>/dev/null || { rm -f "$t" 2>/dev/null || true; continue; }
+      printf '#!/bin/sh\necho ok\n' >"$t" 2>/dev/null || { rm -f "$t" 2>/dev/null || true; continue; }
       chmod 700 "$t" 2>/dev/null || { rm -f "$t" 2>/dev/null || true; continue; }
       if "$t" >/dev/null 2>&1; then
         rm -f "$t" 2>/dev/null || true
@@ -64,6 +63,8 @@ candidate_shebangs=(
   "/bin/sh"
 )
 
+SHEBANG_ERRORS=()
+
 probe_script_content='
 set -e
 
@@ -82,52 +83,69 @@ if ! command -v bashio::addon.version >/dev/null 2>&1; then
   done
 fi
 
-bashio::addon.version
+# Try regular bashio, fallback to standalone if unavailable or fails
+set +e
+_bv="$(bashio::addon.version 2>/dev/null)"
+_rc=$?
+set -e
+
+if [ "$_rc" -ne 0 ] || [ -z "$_bv" ] || [ "$_bv" = "null" ]; then
+  for _sf in /usr/local/lib/bashio-standalone.sh /.bashio-standalone.sh; do
+    if [ -f "$_sf" ]; then
+      # shellcheck disable=SC1090
+      . "$_sf"
+      _bv="$(bashio::addon.version 2>/dev/null || true)"
+      break
+    fi
+  done
+fi
+
+echo "${_bv:-PROBE_OK}"
 '
 
 validate_shebang() {
   local candidate="$1"
   local tmp out rc
+  local errfile msg
 
   # shellcheck disable=SC2206
   local cmd=( $candidate )
   local exe="${cmd[0]}"
 
   if [ ! -x "$exe" ]; then
-    echo " - FAIL (not executable): #!$candidate" >&2
+    SHEBANG_ERRORS+=(" - FAIL (not executable): #!$candidate")
     return 1
   fi
 
   tmp="${EXEC_DIR%/}/shebang_test.$$.$RANDOM"
+  errfile="${EXEC_DIR%/}/shebang_probe_err.$$"
   {
     printf '#!%s\n' "$candidate"
     printf '%s\n' "$probe_script_content"
-  } > "$tmp"
+  } >"$tmp"
   chmod 700 "$tmp" 2>/dev/null || true
 
   set +e
-  out="$("$tmp" 2>"${EXEC_DIR%/}/shebang_probe_err.$$")"
+  out="$("$tmp" 2>"$errfile")"
   rc=$?
   set -e
 
   rm -f "$tmp" 2>/dev/null || true
 
   if [ "$rc" -eq 0 ] && [ -n "${out:-}" ] && [ "$out" != "null" ]; then
-    rm -f "${EXEC_DIR%/}/shebang_probe_err.$$" 2>/dev/null || true
+    rm -f "$errfile" 2>/dev/null || true
     return 0
   fi
 
-  {
-    echo " - FAIL: #!$candidate"
-    echo "   rc=$rc, stdout='${out:-}'"
-    if [ -s "${EXEC_DIR%/}/shebang_probe_err.$$" ]; then
-      echo "   stderr:"
-      sed -n '1,8p' "${EXEC_DIR%/}/shebang_probe_err.$$"
-    else
-      echo "   stderr: <empty>"
-    fi
-  } >&2
-  rm -f "${EXEC_DIR%/}/shebang_probe_err.$$" 2>/dev/null || true
+  msg=$' - FAIL: #!'"$candidate"$'\n'"   rc=$rc, stdout='${out:-}'"$'\n'
+  if [ -s "$errfile" ]; then
+    msg+=$'   stderr:\n'
+    msg+="$(sed -n '1,8p' "$errfile")"$'\n'
+  else
+    msg+=$'   stderr: <empty>\n'
+  fi
+  SHEBANG_ERRORS+=("$msg")
+  rm -f "$errfile" 2>/dev/null || true
   return 1
 }
 
@@ -143,10 +161,32 @@ if [ -z "$shebang" ]; then
   echo "ERROR: No valid shebang found (unable to execute bashio::addon.version via candidates)." >&2
   echo "Tried:" >&2
   printf ' - %s\n' "${candidate_shebangs[@]}" >&2
+  if [ "${#SHEBANG_ERRORS[@]}" -gt 0 ]; then
+    echo "Probe failures:" >&2
+    printf '%s\n' "${SHEBANG_ERRORS[@]}" >&2
+  fi
   exit 1
 fi
 
-echo "Selected shebang: #!$shebang"
+####################################
+# Bashio library for source fallback
+####################################
+
+BASHIO_LIB=""
+for f in /usr/lib/bashio/bashio.sh /usr/lib/bashio/lib.sh /usr/src/bashio/bashio.sh /usr/local/lib/bashio/bashio.sh; do
+  if [ -f "$f" ]; then
+    BASHIO_LIB="$f"
+    break
+  fi
+done
+if [ -z "$BASHIO_LIB" ]; then
+  for f in /usr/local/lib/bashio-standalone.sh /.bashio-standalone.sh; do
+    if [ -f "$f" ]; then
+      BASHIO_LIB="$f"
+      break
+    fi
+  done
+fi
 
 ####################
 # Starting scripts #
@@ -176,7 +216,23 @@ run_one_script() {
     # shellcheck disable=SC1090
     source "$script" || echo -e "\033[0;31mError\033[0m : $script exiting $?"
   else
-    "$script" || echo -e "\033[0;31mError\033[0m : $script exiting $?"
+    _run_rc=0
+    "$script" || _run_rc=$?
+    if [ "$_run_rc" -eq 126 ] && [ -n "${BASHIO_LIB:-}" ]; then
+      echo "Direct exec failed (rc=126, likely E2BIG), retrying via source in subshell..."
+      _run_rc=0
+      (
+        # shellcheck disable=SC1090
+        . "$BASHIO_LIB" 2>/dev/null || true
+        # shellcheck disable=SC1090
+        . "$script"
+      ) || _run_rc=$?
+      if [ "$_run_rc" -ne 0 ]; then
+        echo -e "\033[0;31mError\033[0m : $script exiting $_run_rc"
+      fi
+    elif [ "$_run_rc" -ne 0 ]; then
+      echo -e "\033[0;31mError\033[0m : $script exiting $_run_rc"
+    fi
   fi
 
   sed -i '1a exit 0' "$script"
@@ -196,8 +252,36 @@ if $PID1; then
     echo "Starting: $runfile"
     sed -i "1s|^.*|#!$shebang|" "$runfile"
     chmod +x "$runfile"
-    (exec "$runfile") &
-    true
+    (
+      restart_count=0
+      max_restarts=5
+      while true; do
+        _svc_rc=0
+        "$runfile" || _svc_rc=$?
+        if [ "$_svc_rc" -eq 126 ] && [ -n "${BASHIO_LIB:-}" ]; then
+          echo "Direct exec of $runfile failed (rc=126, likely E2BIG), retrying via source..."
+          _svc_rc=0
+          (
+            # shellcheck disable=SC1090
+            . "$BASHIO_LIB" 2>/dev/null || true
+            # shellcheck disable=SC1090
+            . "$runfile"
+          ) || _svc_rc=$?
+        fi
+        rc=$_svc_rc
+        if [ "$rc" -eq 0 ]; then
+          echo "$runfile exited cleanly (exit 0), not restarting."
+          break
+        fi
+        restart_count=$((restart_count + 1))
+        if [ "$restart_count" -ge "$max_restarts" ]; then
+          echo -e "\033[0;31mERROR: $runfile has crashed $restart_count times (last exit code: $rc), giving up.\033[0m"
+          break
+        fi
+        echo -e "\e[38;5;214m$(date) WARNING: $runfile exited (code $rc), restarting (#${restart_count}/${max_restarts}) in 5s...\e[0m"
+        sleep 5
+      done
+    ) &
   done
   shopt -u nullglob
 fi
@@ -211,6 +295,7 @@ if $PID1; then
   echo -e "\033[0;32mEverything started!\033[0m"
 
   terminate() {
+    local local_pid
     echo "Termination signal received, forwarding to subprocesses..."
     if command -v pgrep >/dev/null 2>&1; then
       while read -r pid; do

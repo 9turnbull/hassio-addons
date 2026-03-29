@@ -1,4 +1,28 @@
 
+## debian-2026-03-27 (2026-03-27)
+- Update to latest version from charlocharlie/epicgames-freegames
+
+## debian-2026-03-18 (2026-03-18)
+- Update to latest version from charlocharlie/epicgames-freegames
+
+## debian-2026-03-09 (2026-03-09)
+- Update to latest version from charlocharlie/epicgames-freegames
+
+## debian-2026-03-06 (2026-03-06)
+- Update to latest version from charlocharlie/epicgames-freegames
+
+## debian-2026-02-28 (2026-02-28)
+- Update to latest version from charlocharlie/epicgames-freegames
+
+## debian-2026-02-25 (2026-02-25)
+- Update to latest version from charlocharlie/epicgames-freegames
+
+## debian-2026-02-20 (2026-02-20)
+- Update to latest version from charlocharlie/epicgames-freegames
+
+## debian-2026-02-12 (2026-02-12)
+- Update to latest version from charlocharlie/epicgames-freegames
+
 ## debian-2026-01-09 (2026-01-09)
 - Update to latest version from charlocharlie/epicgames-freegames
 

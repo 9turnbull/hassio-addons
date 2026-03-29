@@ -1,4 +1,25 @@
 
+## 1.43.0.10492-121068a07-ls297 (2026-03-28)
+- Update to latest version from linuxserver/docker-plex (changelog : https://github.com/linuxserver/docker-plex/releases)
+
+## 1.43.0.10492-121068a07-ls296 (2026-03-21)
+- Update to latest version from linuxserver/docker-plex (changelog : https://github.com/linuxserver/docker-plex/releases)
+
+## 1.43.0.10492-121068a07-ls295 (2026-03-02)
+- Update to latest version from linuxserver/docker-plex (changelog : https://github.com/linuxserver/docker-plex/releases)
+
+## 1.43.0.10492-121068a07-ls294 (2026-02-23)
+- Update to latest version from linuxserver/docker-plex (changelog : https://github.com/linuxserver/docker-plex/releases)
+
+## 1.43.0.10492-121068a07-ls293 (2026-02-14)
+- Update to latest version from linuxserver/docker-plex (changelog : https://github.com/linuxserver/docker-plex/releases)
+
+## 1.43.0.10467-2b1ba6e69-ls290 (2026-01-30)
+- Update to latest version from linuxserver/docker-plex (changelog : https://github.com/linuxserver/docker-plex/releases)
+## 1.42.2.10156-f737b826c-ls289-2 (28-01-2026)
+- PLEASE BACKUP
+- Add configurable data_location for Plex storage (default /share/plex) with migration support when the target folder is empty.
+
 ## 1.42.2.10156-f737b826c-ls289 (2026-01-21)
 - Update to latest version from linuxserver/docker-plex (changelog : https://github.com/linuxserver/docker-plex/releases)
 

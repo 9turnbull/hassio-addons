@@ -11,6 +11,10 @@ devices:
   - /dev/ttyUSB1
   - /dev/ttyACM0
   - /dev/ttyACM1
+  - /dev/i2c-0
+  - /dev/i2c-1
+  - /dev/i2c-13
+  - /dev/i2c-14
 environment:
   HOME: /config
   NMEA0183PORT: "10110"
@@ -53,5 +57,5 @@ uart: true
 udev: true
 url: https://github.com/alexbelgium/hassio-addons
 usb: true
-version: "2.20.0"
+version: "2.24.0"
 webui: http://[HOST]:[PORT:3000]

@@ -18,7 +18,9 @@ fi
 
 # Clean symlinks
 find /config -maxdepth 1 -type l -delete
-find /homeassistant/addons_config -maxdepth 1 -type l -delete
+if [ -d /homeassistant/addons_config ]; then
+    find /homeassistant/addons_config -maxdepth 1 -type l -delete
+fi
 
 # Remove erroneous folders
 if [ -d /homeassistant ]; then
@@ -30,10 +32,14 @@ if [ -d /homeassistant ]; then
     fi
 fi
 
-# Create symlinks
-ln -s /homeassistant/addons_config /config
-ln -s /homeassistant/addons_autoscripts /config
-find /addon_configs/ -maxdepth 1 -mindepth 1 -type d -not -name "*cloudcommander*" -exec ln -s {} /config/addons_config/ \;
+# Create symlinks with legacy folders
+if [ -d /homeassistant/addons_config ]; then
+    ln -s /homeassistant/addons_config /config
+    find /addon_configs/ -maxdepth 1 -mindepth 1 -type d -not -name "*cloudcommander*" -exec ln -s {} /config/addons_config/ \;
+fi
+if [ -d /homeassistant/addons_autoscripts ]; then
+    ln -s /homeassistant/addons_autoscripts /config
+fi
 
 #################
 # NGINX SETTING #
@@ -82,7 +88,18 @@ fi
 bashio::log.info "Starting..."
 
 cd /
-./usr/src/app/bin/cloudcmd.mjs '"'"$DROPBOX_TOKEN""$CUSTOMOPTIONS"'"' &
+if [ -f /usr/src/app/bin/cloudcmd.mjs ]; then
+    CLOUDCMD_BIN=/usr/src/app/bin/cloudcmd.mjs
+elif [ -f /usr/src/app/bin/cloudcmd.js ]; then
+    CLOUDCMD_BIN=/usr/src/app/bin/cloudcmd.js
+elif command -v cloudcmd >/dev/null 2>&1; then
+    CLOUDCMD_BIN=cloudcmd
+else
+    bashio::log.error "Cloud Commander binary not found in /usr/src/app/bin or PATH."
+    exit 1
+fi
+# shellcheck disable=SC2086
+"$CLOUDCMD_BIN" $DROPBOX_TOKEN $CUSTOMOPTIONS &
 bashio::net.wait_for 8000 localhost 900 || true
 bashio::log.info "Started !"
 exec nginx
